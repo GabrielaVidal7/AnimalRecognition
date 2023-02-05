@@ -14,9 +14,11 @@ This work compares KNN method with ResNet. The results shows that KNN method got
 | ResNet | 91% |
 
 ## Python Libraries
-*   sentence-transformers ('pip install sentence-transformers')
+*   sentence-transformers (`pip install sentence-transformers`)
 
-*   imbalanced-learn ('pip install -U imbalanced-learn')
+*   imbalanced-learn (`pip install -U imbalanced-learn`)
+
+*   ktrain (`pip install ktrain`)
 
 ## Step by step
 1. Install all dependencies
