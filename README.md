@@ -20,10 +20,5 @@ This work compares KNN method with ResNet. The results shows that KNN method got
 
 *   ktrain (`pip install ktrain`)
 
-## Step by step
-1. Install all dependencies
-2. 
-
-
 ## Members
 Gabriela Barion Vidal

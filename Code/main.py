@@ -113,5 +113,5 @@ predictor = ktrain.get_predictor(learner.model, preproc)
 acc_nn = learner.validate(val_data, predictor, class_names = predictor.get_classes())
 
 print(acc_nn)'''
-for acc in acc_knn:
-    print(acc)
+# for acc in acc_knn:
+#     print(acc)
