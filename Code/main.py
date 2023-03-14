@@ -75,7 +75,7 @@ for k in K:
     knn.fit(X_train,y_train)
     # Results
     acc_knn.append(knn.score(X_test, y_test))
-    #   print('k: ', k, '\tacurácia = %.5f' %acc)
+    print('k: ', k, '\tacurácia = %.5f' %acc)
 
 
 # ===================================================
