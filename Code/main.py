@@ -68,13 +68,12 @@ K = [1, 3, 5, 7, 11]
 
 Acc = pd.DataFrame(K)
 Acc.columns = ['K']
-acc_knn=[]
 
 for k in K:
     knn = KNeighborsClassifier(n_neighbors=k,metric='cosine')
     knn.fit(X_train,y_train)
     # Results
-    acc_knn.append(knn.score(X_test, y_test))
+    acc = knn.score(X_test, y_test)
     print('k: ', k, '\tacurácia = %.5f' %acc)
 
 
