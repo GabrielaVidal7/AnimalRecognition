@@ -26,7 +26,7 @@ def make_dir(dirPath):
         os.mkdir(dirPath)
     return
 
-path = 'Dataset\'
+path = 'Dataset/'
 
 mypath = ['cheetah', 'hyena']
 images=[]
