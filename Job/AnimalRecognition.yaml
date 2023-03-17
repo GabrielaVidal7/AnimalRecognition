@@ -1,0 +1,47 @@
+protocolVersion: 2
+name: Test_Animal_Recognition_2023_02_27_2
+type: job
+jobRetryCount: 0
+prerequisites:
+  - type: dockerimage
+    uri: 'gabrielavidal/ai_test:cheetah1'
+    name: docker_image_0
+taskRoles:
+  taskrole:
+    instances: 1
+    completion:
+      minFailedInstances: 1
+    taskRetryCount: 0
+    dockerImage: docker_image_0
+    resourcePerInstance:
+      gpu: 1
+      cpu: 10
+      memoryMB: 80388
+    commands:
+      - echo 'Iniciando Job'
+      - '''git clone https://github.com/GabrielaVidal7/AnimalRecognition.git'''
+      - echo 'Git clone feito'
+      - cd AnimalRecognition/Code
+      - python3 main.py
+defaults:
+  virtualCluster: default
+extras:
+  com.microsoft.pai.runtimeplugin:
+    - plugin: ssh
+      parameters:
+        jobssh: true
+        userssh:
+          type: custom
+          value: >-
+            ssh-rsa
+            AAAAB3NzaC1yc2EAAAADAQABAAAAgQCPBSG2JdchjZj0/qVUU45Y3mne+7P9W40LzO6pffHVk42FWdsF9tYOCX3lroOpvSrl/D2oMd/jXbPCHA/v3+hFZzdVVVCfQxWdPy8etMPcGl3nDVUbxJps/X+rP0Jov1B0TfOhrIFGD55psw8Be8ZuTkYV4e63kN9Q/vUMtwxD0Q==
+            pai-job-ssh
+    - plugin: teamwise_storage
+      parameters:
+        storageConfigNames:
+          - rbd-nfs
+  hivedScheduler:
+    taskRoles:
+      taskrole:
+        skuNum: 1
+        skuType: DT
